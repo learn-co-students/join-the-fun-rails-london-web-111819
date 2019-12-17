@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+5.times do 
+    Taxi.create
+end
+
+5.times do
+    Passenger.create
+end
+
+5.times do
+    Ride.create(:taxi_id => Taxi.all.sample.id, :passenger_id => Passenger.all.sample.id)
+end
